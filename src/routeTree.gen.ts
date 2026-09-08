@@ -11,9 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AssignmentsRouteImport } from './routes/assignments'
+import { Route as AttendanceRouteImport } from './routes/attendance'
 import { Route as ClassesRouteImport } from './routes/classes'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ResultsRouteImport } from './routes/results'
+import { Route as ScoresRouteImport } from './routes/scores'
 import { Route as SessionsRouteImport } from './routes/sessions'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentsRouteImport } from './routes/students'
 import { Route as SubjectsRouteImport } from './routes/subjects'
 import { Route as TeacherRouteImport } from './routes/teacher'
@@ -30,6 +35,11 @@ const AssignmentsRoute = AssignmentsRouteImport.update({
   path: '/assignments',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AttendanceRoute = AttendanceRouteImport.update({
+  id: '/attendance',
+  path: '/attendance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ClassesRoute = ClassesRouteImport.update({
   id: '/classes',
   path: '/classes',
@@ -40,9 +50,29 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScoresRoute = ScoresRouteImport.update({
+  id: '/scores',
+  path: '/scores',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SessionsRoute = SessionsRouteImport.update({
   id: '/sessions',
   path: '/sessions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudentsRoute = StudentsRouteImport.update({
@@ -74,9 +104,14 @@ const TermsRoute = TermsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/assignments': typeof AssignmentsRoute
+  '/attendance': typeof AttendanceRoute
   '/classes': typeof ClassesRoute
   '/dashboard': typeof DashboardRoute
+  '/reports': typeof ReportsRoute
+  '/results': typeof ResultsRoute
+  '/scores': typeof ScoresRoute
   '/sessions': typeof SessionsRoute
+  '/settings': typeof SettingsRoute
   '/students': typeof StudentsRoute
   '/subjects': typeof SubjectsRoute
   '/teacher': typeof TeacherRoute
@@ -86,9 +121,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/assignments': typeof AssignmentsRoute
+  '/attendance': typeof AttendanceRoute
   '/classes': typeof ClassesRoute
   '/dashboard': typeof DashboardRoute
+  '/reports': typeof ReportsRoute
+  '/results': typeof ResultsRoute
+  '/scores': typeof ScoresRoute
   '/sessions': typeof SessionsRoute
+  '/settings': typeof SettingsRoute
   '/students': typeof StudentsRoute
   '/subjects': typeof SubjectsRoute
   '/teacher': typeof TeacherRoute
@@ -99,9 +139,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/assignments': typeof AssignmentsRoute
+  '/attendance': typeof AttendanceRoute
   '/classes': typeof ClassesRoute
   '/dashboard': typeof DashboardRoute
+  '/reports': typeof ReportsRoute
+  '/results': typeof ResultsRoute
+  '/scores': typeof ScoresRoute
   '/sessions': typeof SessionsRoute
+  '/settings': typeof SettingsRoute
   '/students': typeof StudentsRoute
   '/subjects': typeof SubjectsRoute
   '/teacher': typeof TeacherRoute
@@ -113,9 +158,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/assignments'
+    | '/attendance'
     | '/classes'
     | '/dashboard'
+    | '/reports'
+    | '/results'
+    | '/scores'
     | '/sessions'
+    | '/settings'
     | '/students'
     | '/subjects'
     | '/teacher'
@@ -125,9 +175,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/assignments'
+    | '/attendance'
     | '/classes'
     | '/dashboard'
+    | '/reports'
+    | '/results'
+    | '/scores'
     | '/sessions'
+    | '/settings'
     | '/students'
     | '/subjects'
     | '/teacher'
@@ -137,9 +192,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/assignments'
+    | '/attendance'
     | '/classes'
     | '/dashboard'
+    | '/reports'
+    | '/results'
+    | '/scores'
     | '/sessions'
+    | '/settings'
     | '/students'
     | '/subjects'
     | '/teacher'
@@ -150,9 +210,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AssignmentsRoute: typeof AssignmentsRoute
+  AttendanceRoute: typeof AttendanceRoute
   ClassesRoute: typeof ClassesRoute
   DashboardRoute: typeof DashboardRoute
+  ReportsRoute: typeof ReportsRoute
+  ResultsRoute: typeof ResultsRoute
+  ScoresRoute: typeof ScoresRoute
   SessionsRoute: typeof SessionsRoute
+  SettingsRoute: typeof SettingsRoute
   StudentsRoute: typeof StudentsRoute
   SubjectsRoute: typeof SubjectsRoute
   TeacherRoute: typeof TeacherRoute
@@ -176,6 +241,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AssignmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/attendance': {
+      id: '/attendance'
+      path: '/attendance'
+      fullPath: '/attendance'
+      preLoaderRoute: typeof AttendanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/classes': {
       id: '/classes'
       path: '/classes'
@@ -190,11 +262,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scores': {
+      id: '/scores'
+      path: '/scores'
+      fullPath: '/scores'
+      preLoaderRoute: typeof ScoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sessions': {
       id: '/sessions'
       path: '/sessions'
       fullPath: '/sessions'
       preLoaderRoute: typeof SessionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/students': {
@@ -238,9 +338,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AssignmentsRoute: AssignmentsRoute,
+  AttendanceRoute: AttendanceRoute,
   ClassesRoute: ClassesRoute,
   DashboardRoute: DashboardRoute,
+  ReportsRoute: ReportsRoute,
+  ResultsRoute: ResultsRoute,
+  ScoresRoute: ScoresRoute,
   SessionsRoute: SessionsRoute,
+  SettingsRoute: SettingsRoute,
   StudentsRoute: StudentsRoute,
   SubjectsRoute: SubjectsRoute,
   TeacherRoute: TeacherRoute,
