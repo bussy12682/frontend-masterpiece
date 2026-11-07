@@ -1,0 +1,4 @@
+- [ ] Resolve existing TypeScript errors and verify public pages render.
+- [ ] Enable Lovable Cloud and connect persistent school data and authentication.
+- [ ] Replace demo-only actions with working create, update, delete, save, filtering, and report flows.
+- [ ] Verify key school workflows and review route metadata.
