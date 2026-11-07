@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794053060225,
+      "tag": "0000_initialize_edutrack_school_data",
+      "breakpoints": true
+    }
+  ]
 }
